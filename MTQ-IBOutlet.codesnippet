@@ -3,22 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>MTQ-Unwind</string>
+	<string>IBOutlet</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@IBAction func unwindFrom&lt;#ViewControllerA#&gt;To&lt;#ViewControllerB#&gt;(_ segue: UIStoryboardSegue) {
-        guard let &lt;#ViewController#&gt; = segue.source as? &lt;#ViewController#&gt; else { return }
-        &lt;#TO DO HERE...#&gt;
-    }</string>
+	<string>@IBOutlet private weak var &lt;#value#&gt;: &lt;#value#&gt;!</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6AD6BF05-51E3-4C53-B606-1412F2EF9E76</string>
+	<string>76B49D7F-FE24-491C-949C-F814BA6530D4</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>MTQ-Unwind</string>
+	<string>MTQ-IBOutlet</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
