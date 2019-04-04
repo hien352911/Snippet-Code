@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>MTQ-AddChildController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension UIViewController {
+    func add(_ childViewController: UIViewController, containerView: UIView) {
+        addChild(childViewController)
+        childViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(childViewController.view)
+        NSLayoutConstraint.activate([
+            childViewController.view.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            childViewController.view.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            childViewController.view.widthAnchor.constraint(equalTo: containerView.widthAnchor),
+            childViewController.view.heightAnchor.constraint(equalTo: containerView.heightAnchor)
+            ])
+        childViewController.didMove(toParent: self)
+    }
+    
+    func remove(_ childViewController: UIViewController) {
+        childViewController.willMove(toParent: nil)
+        childViewController.view.removeFromSuperview()
+        childViewController.removeFromParent()
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8BABD8D2-717A-40B3-8CDC-85D754BEDD3A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MTQ-AddChildController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
