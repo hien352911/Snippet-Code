@@ -6,17 +6,36 @@
 	<string>MTQ-Singleton</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
+		<string>All</string>
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class &lt;#nameClass#&gt; {
-    static let shared: &lt;#nameClass#&gt; = &lt;#nameClass#&gt;()
-    private init() {}
+	<string>final class &lt;#singleton-class-name#&gt; {
+    static let shared = &lt;#singleton-class-name#&gt;()
+    
+    private let concurrentQueue = DispatchQueue(label: "ConcurrentQueue", qos: .default, attributes: .concurrent)
+    
+    private var _map: [String: Any] = [:]
+    // Giao tiếp qua map
+    public var map: [String: Any] {
+        get {
+            return concurrentQueue.sync { _map }
+        }
+        set {
+            concurrentQueue.async(flags: .barrier) { self._map = newValue }
+        }
+    }
+    
+    func setMap(_ map: [String: Any]) {
+        self.map = map
+    }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5D1EC5CF-CC86-4A5A-8748-335239A59B75</string>
+	<string>285F128C-1714-4A50-988F-C1F606118C3C</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>MTQ-Singleton</string>
 	<key>IDECodeSnippetUserSnippet</key>
