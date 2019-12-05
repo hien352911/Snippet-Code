@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>MTQ-TextViewUnderline</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let attributedString = NSMutableAttributedString(string: Constant.privacy)
+        _ = attributedString.setAsLink(textToFind: Constant.privacyUnderline, linkURL: "https://www.google.com")
+        attributedString.setUnderline(textToFind: Constant.privacyUnderline, color: Constant.privacyColor)
+        attributedString.setTextColor(textToFind: Constant.privacyUnderline, textColor: Constant.privacyColor)
+        privacyTextView.linkTextAttributes = [NSAttributedString.Key.foregroundColor: Constant.privacyColor]
+        
+        privacyTextView.attributedText = attributedString
+        privacyTextView.isSelectable = true
+        privacyTextView.isEditable = false
+        privacyTextView.textAlignment = .center
+        privacyTextView.delegate = self
+
+// MARK: - UITextViewDelegate
+extension SignUpViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -&gt; Bool {
+        return true
+    }
+    
+    @available(iOS 10.0, *)
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -&gt; Bool {
+        return true
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7A4101E8-BA3C-40C4-AB60-64CE2941A66D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>MTQ-TextViewUnderline</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MTQ-TextViewUnderline</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
