@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>MTQ-AddRefreshControl</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>private var refreshControl: UIRefreshControl?
+    @objc private func refresh() {
+        
+    }
+    private func addPullToRefresh() {
+        self.refreshControl = UIRefreshControl(frame: .zero)
+        self.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        self.refreshControl?.tintColor = ColorConstant.main
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Lấy dữ liệu")
+        if #available(iOS 10, *) {
+            tableView.refreshControl = self.refreshControl
+        } else {
+            tableView.addSubview(self.refreshControl!)
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7E29F256-BAAA-459E-9E6A-6F8E9EA4A7B8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MTQ-AddRefreshControl</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
