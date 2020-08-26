@@ -6,25 +6,39 @@
 	<string>MTQ-TextFieldMaximumCharacters</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
+		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -&gt; Bool {
-        guard let text = textField.text else { return true }
-        let count = text.count + string.count - range.length
-        return count &lt;= 6
-    }</string>
+	<string>// MARK: - UITextFieldDelegate
+extension LiveStreamMergePackageTableViewCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -&gt; Bool {
+        // get the current text, or use an empty string if that failed
+        let currentText = textField.text ?? ""
+        
+        // attempt to read the range they are trying to change, or exit if we can't
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        // add their new text to the existing text
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        // make sure the result is under 11 characters
+        return updatedText.count &lt;= 11
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>8C8476BC-3489-437A-A754-226E7D6D9CB9</string>
+	<string>8E8F1FBE-EEC9-44FE-9F6A-F261C66D2449</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetPlatformFamily</key>
 	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>MTQ-TextFieldMaximumCharacters</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

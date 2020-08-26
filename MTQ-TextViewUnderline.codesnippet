@@ -6,8 +6,8 @@
 	<string>MTQ-TextViewUnderline</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
 		<string>All</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>let attributedString = NSMutableAttributedString(string: Constant.privacy)
@@ -46,6 +46,6 @@ extension SignUpViewController: UITextViewDelegate {
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>
