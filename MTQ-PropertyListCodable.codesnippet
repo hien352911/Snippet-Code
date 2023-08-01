@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>MTQ-PropertyListCodable</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func saveChecklistItems() {
+    let encoder = PropertyListEncoder()
+    do {
+      // items là một mảng các object cần phải adopt Codable
+      let data = try encoder.encode(items)
+      try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
+    } catch {
+      print("Error encoding item array!")
+    }
+  }
+  
+  func loadChecklistItems() {
+    let path = dataFilePath()
+    if let data = try? Data(contentsOf: path) {
+      let decoder = PropertyListDecoder()
+      do {
+        items = try decoder.decode([ChecklistItem].self, from: data)
+      } catch {
+        print("Error decoding item array!")
+      }
+    }
+  }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E80E0292-BEB4-4DD1-B0C2-CBA05ECF6347</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MTQ-PropertyListCodable</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
